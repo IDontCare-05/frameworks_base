@@ -80,6 +80,7 @@ public class QSContainerImpl extends FrameLayout implements
     private boolean mQsBgNewEnabled;
 
     private boolean mHeaderImageEnabled;
+    private int mHeaderImgHeight;
     private ImageView mBackgroundImage;
     private StatusBarHeaderMachine mStatusBarHeaderMachine;
     private Drawable mCurrentBackground;
@@ -205,6 +206,7 @@ public class QSContainerImpl extends FrameLayout implements
         mQsBackGroundAlpha = Settings.System.getIntForUser(resolver,
                 Settings.System.QS_PANEL_BG_ALPHA, 255,
                 UserHandle.USER_CURRENT);
+	mHeaderImgHeight = getCustomHeaderImgHeight();    
 
         mQsBgNewEnabled = Settings.System.getIntForUser(getContext().getContentResolver(),
                     Settings.System.QS_NEW_BG_ENABLED, 1, UserHandle.USER_CURRENT) == 1;
@@ -247,6 +249,13 @@ public class QSContainerImpl extends FrameLayout implements
             mBackground.setBackground(mQsBackGroundNew);
         }
     }
+	
+    private int getCustomHeaderImgHeight() {
+        final Resources res = mContext.getResources();
+        return Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.CUSTOM_HEADERIMGHEIGHT_HEIGHT, res.getDimensionPixelSize(R.ancient_headerimg_size));
+    }
+
 
     @Override
     public boolean performClick() {

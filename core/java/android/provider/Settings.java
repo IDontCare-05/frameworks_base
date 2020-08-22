@@ -6642,6 +6642,17 @@ public final class Settings {
          */
         public static final String SBC_HD_PRIORITY = "sbc_hd_priority";
 
+	/**
+         * Statusbar hight value for manual mode
+         *
+         * @hide
+         */
+        public static final String CUSTOM_HEADERIMG_HEIGHT = "custom_headerimg_height";
+
+        /** @hide */
+        private static final Validator CUSTOM_HEADERIMG_HEIGHT_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+	    
         /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
@@ -6825,7 +6836,8 @@ public final class Settings {
             THEMING_SETTINGS_DASHBOARD_ICONS,
             FOD_ICON,
             FOD_PRESSED_STATE,
-            FOD_RECOGNIZING_ANIMATION
+            FOD_RECOGNIZING_ANIMATION,
+	    CUSTOM_HEADERIMG_HEIGHT,
         };
 
         /**
@@ -7081,6 +7093,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(THEMING_SETTINGS_DASHBOARD_ICONS);
             PRIVATE_SETTINGS.add(QS_SHOW_AUTO_BRIGHTNESS);
             PRIVATE_SETTINGS.add(QS_SHOW_BRIGHTNESS_SLIDER);
+	    PRIVATE_SETTINGS.add(CUSTOM_HEADERIMG_HEIGHT);
         }
 
         /**
@@ -7318,6 +7331,7 @@ public final class Settings {
             VALIDATORS.put(FOD_RECOGNIZING_ANIMATION, FOD_RECOGNIZING_ANIMATION_VALIDATOR);
             VALIDATORS.put(QS_SHOW_AUTO_BRIGHTNESS, QS_SHOW_AUTO_BRIGHTNESS_VALIDATOR);
             VALIDATORS.put(QS_SHOW_BRIGHTNESS_SLIDER, QS_SHOW_BRIGHTNESS_SLIDER_VALIDATOR);
+	    VALIDATORS.put(CUSTOM_HEADERIMG_HEIGHT, CUSTOM_HEADERIMG_HEIGHT_VALIDATOR);
         }
 
         /**

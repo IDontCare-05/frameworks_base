@@ -253,7 +253,7 @@ public class QSContainerImpl extends FrameLayout implements
     private int getCustomHeaderImgHeight() {
         final Resources res = mContext.getResources();
         return Settings.System.getInt(mContext.getContentResolver(),
-                Settings.System.CUSTOM_HEADERIMGHEIGHT_HEIGHT, res.getDimensionPixelSize(R.ancient_headerimg_size));
+                Settings.System.CUSTOM_HEADERIMG_HEIGHT, res.getDimensionPixelSize(R.ancient_headerimg_size));
     }
 
 
